@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Elenco Seggi</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body class="p-5">
+		<div class="container bg-white p-4 shadow rounded">
+			<div class="d-flex justify-content-between align-items-center mb-4">
+				<h2>Sedi Seggi Elettorali</h2>
+				<a href="/" class="btn btn-secondary">Torna alla Home</a>
+			</div>
+			<table class="table table-striped">
+				<thead class="table-primary">
+					<tr>
+						<th>Codice</th>
+						<th>Sede</th>
+						<th>Città</th>
+						<th>Provincia</th>
+						<th>Regione</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="s : ${listaSeggi}">
+						<td th:text="${s.codiceSeggio}"></td>
+						<td th:text="${s.sede}"></td>
+						<td th:text="${s.citta}"></td>
+						<td th:text="${s.provincia}"></td>
+						<td th:text="${s.regione}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
